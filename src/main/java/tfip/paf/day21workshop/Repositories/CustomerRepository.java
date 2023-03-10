@@ -1,5 +1,6 @@
 package tfip.paf.day21workshop.Repositories;
 
+import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
@@ -90,8 +91,8 @@ public class CustomerRepository {
             Order order = new Order();
             order.setId(rs.getInt("id"));
             order.setCustomerId(customer_id);
-            order.setOrderDate(rs.getTime("order_date"));
-            order.setShippedDate(rs.getTime("shipped_date"));
+            order.setOrderDate((LocalDateTime) rs.getObject("order_date"));
+            order.setShippedDate((LocalDateTime) rs.getObject("shipped_date"));
             order.setShipCity(rs.getString("ship_city"));
             orderList.add(order);
         }

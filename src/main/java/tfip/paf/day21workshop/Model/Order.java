@@ -1,16 +1,17 @@
 package tfip.paf.day21workshop.Model;
 
-import java.sql.Time;
+import java.io.Serializable;
+import java.time.LocalDateTime;
 
-public class Order {
+public class Order implements Serializable{
     
     private Integer id;
     private Integer customerId;
-    private Time orderDate;
-    private Time shippedDate;
+    private LocalDateTime orderDate;
+    private LocalDateTime shippedDate;
     private String shipCity;
 
-    public Order(Integer id, Integer customerId, Time orderDate, Time shippedDate, String shipCity) {
+    public Order(Integer id, Integer customerId, LocalDateTime orderDate, LocalDateTime shippedDate, String shipCity) {
         this.id = id;
         this.customerId = customerId;
         this.orderDate = orderDate;
@@ -37,19 +38,19 @@ public class Order {
         this.customerId = customerId;
     }
 
-    public Time getOrderDate() {
+    public LocalDateTime getOrderDate() {
         return orderDate;
     }
 
-    public void setOrderDate(Time orderDate) {
+    public void setOrderDate(LocalDateTime orderDate) {
         this.orderDate = orderDate;
     }
 
-    public Time getShippedDate() {
+    public LocalDateTime getShippedDate() {
         return shippedDate;
     }
 
-    public void setShippedDate(Time shippedDate) {
+    public void setShippedDate(LocalDateTime shippedDate) {
         this.shippedDate = shippedDate;
     }
 
